@@ -279,6 +279,12 @@
                 "category": "clangd",
                 "title": "Toggle inlay hints",
                 "enablement": "clangd.inlayHints.supported"
+            },
+            {
+                "command": "clangd.openWalkthrough",
+                "category": "clangd",
+                "title": "Open Walkthrough",
+                "icon": "$(question)"
             }
         ],
         "keybindings": [
@@ -377,6 +383,63 @@
                     "when": "clangd.ast.hasData"
                 }
             ]
-        }
+        },
+        "walkthroughs": [
+            {
+                "id": "landing",
+                "title": "Getting started with clangd",
+                "description": "Getting started with *clangd*",
+                "steps": [
+                    {
+                        "id": "docs",
+                        "title": "Read the documentation!",
+                        "description": "Read the *clangd* [documentation](https://clangd.llvm.org/)!",
+                        "media": {
+                            "image": "./icon.png",
+                            "altText": "clangd logo"
+                        },
+                        "completionEvents": [
+                            "onLink:https://clangd.llvm.org/"
+                        ]
+                    },
+                    {
+                        "id": "project_setup",
+                        "title": "Project setup",
+                        "description": "Learn [how to configure](https://clangd.llvm.org/installation#project-setup) your build system to help *clangd* provide the best results",
+                        "media": {
+                            "image": "icon.png",
+                            "altText": "clangd logo"
+                        },
+                        "completionEvents": [
+                            "onLink:https://clangd.llvm.org/installation#project-setup"
+                        ]
+                    },
+                    {
+                        "id": "configure",
+                        "title": "Configure clangd",
+                        "description": "*Clangd* offers lots of configuration options. [Read the docs](https://clangd.llvm.org/config), open [project configuration file](command:rust-analyzer.openFAQ), or open [user configuration file](command:clangd.userConfig)",
+                        "media": {
+                            "image": "icon.png",
+                            "altText": "clangd logo"
+                        },
+                        "completionEvents": [
+                            "onLink:https://clangd.llvm.org/config"
+                        ]
+                    },
+                    {
+                        "id": "issues",
+                        "title": "File an issue",
+                        "description": "Bug report or enhancement suggestion? File an issue on [clangd github](https://github.com/clangd/clangd/issues)",
+                        "media": {
+                            "image": "icon.png",
+                            "altText": "clangd logo"
+                        },
+                        "completionEvents": [
+                            "onLink:https://github.com/clangd/clangd/issues"
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 }

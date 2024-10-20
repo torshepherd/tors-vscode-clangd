@@ -25,6 +25,15 @@ export async function activate(context: vscode.ExtensionContext) {
 
   await clangdContext.activate(context.globalStoragePath, outputChannel);
 
+  context.subscriptions.push(
+    vscode.commands.registerCommand('clangd.openWalkthrough', async () => {
+      await vscode.commands.executeCommand(
+        "workbench.action.openWalkthrough",
+        "clangd.clangd#landing",
+        false,
+      );
+    }));
+
   const shouldCheck = vscode.workspace.getConfiguration('clangd').get(
       'detectExtensionConflicts');
   if (shouldCheck) {
